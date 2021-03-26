@@ -12,5 +12,5 @@ def home(request):
         else:
             messages.success(request, ('新增失敗'))
 
-    all_artists = Artist.objects.all()
+    all_artists = Artist.objects.order_by('-created_at')
     return render(request, 'home.html', {'all_artists': all_artists})
