@@ -130,3 +130,13 @@ h1, h2, h3, h4, h5, h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+/* 新增 */
+.underline-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid #3d444b;
+  outline:none;
+  box-shadow:none;
+  border-radius: 0;
+}
