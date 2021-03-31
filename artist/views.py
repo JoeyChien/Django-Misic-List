@@ -1,8 +1,10 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .models import Artist
 from .forms import ArtistForm
 from django.contrib import messages
 
+@login_required
 def home(request):
     if request.method == 'POST':
         form = ArtistForm(request.POST or None)
