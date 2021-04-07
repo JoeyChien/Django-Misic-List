@@ -15,7 +15,7 @@ class RegisterForm(forms.Form):
     def clean_username(self):
         username = self.cleaned_data.get("username")
         qs = User.objects.filter(username__iexact = username)
-        if not qs.exists():
+        if qs.exists():
             raise forms.ValidationError("使用者名稱重複")
         return username
 

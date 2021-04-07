@@ -11,7 +11,7 @@ def register_view(request):
         password1 = form.cleaned_data.get("password1")
         password2 = form.cleaned_data.get("password2")
         try:
-            user = User.objects.create_user(username, password)
+            user = User.objects.create_user(username, password1)
         except:
             user = None
 
@@ -20,7 +20,7 @@ def register_view(request):
             return redirect("/")
         else:
             request.session['invalid_user'] = 1
-    return render(request, "accounts/form.html", {"form": form})    
+    return render(request, "accounts/form.html", {"form": form}) 
 
 def login_view(request):
     form = LoginForm(request.POST or None)
